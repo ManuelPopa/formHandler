@@ -8,23 +8,23 @@ module.exports = React.createClass({
     }
   },
   render: function() {
-    return <div className="input-group">
-      <table className="form-control">
-        <tr>
-            <th>First name</th>
-            <th>Last name</th>
-        </tr>
-        <tr>          
-          <td><input value={this.state.firstname} onChange={this.handleFirstName} type="text" /></td>
-          <td><input value={this.state.name} onChange={this.handleName} type="text" /></td>
-        </tr>        
-      </table>
-      <span className="input-group-btn">
-        <button onClick={this.handleClick} className="btn btn-default" type="button">
+    return <div className="input-group" >
+      <table className="form-control" >
+        <tr >
+            <th >First name </th >
+            <th >Last name </th >
+        </tr >
+        <tr >          
+          <td ><input value={this.state.firstname} type="text" onChange={this.handleFirstName} /></td >
+          <td ><input value={this.state.name} type="text" onChange={this.handleName} /></td >
+        </tr >        
+      </table >
+      <span className="input-group-btn" >
+        <button className="btn btn-default" type="button" onClick={this.handleClick} >
           Submit Name
-        </button>
-      </span>
-    </div>
+        </button >
+      </span >
+    </div >
   },
   
   handleName: function(event) {

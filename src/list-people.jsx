@@ -38,7 +38,7 @@ module.exports = React.createClass({
         <button className="btn btn-default" onClick={this.handleSaveClick} >
           Save
         </button>,
-        <button onClick={this.handleUndoClick} className="btn btn-default" >
+        <button className="btn btn-default" onClick={this.handleUndoClick} >
           Undo
         </button>
       ]
@@ -49,8 +49,8 @@ module.exports = React.createClass({
       return null
     } else {
       return <div >     
-        <input value={this.state.firstname} onChange={this.handleFirstNameChange} type="text" className="form-control" />   
-        <input value={this.state.name} onChange={this.handleNameChange} type="text" className="form-control" />          
+        <input className="form-control" value={this.state.firstname} onChange={this.handleFirstNameChange} type="text" />   
+        <input className="form-control" value={this.state.name} onChange={this.handleNameChange} type="text" />          
       </div>
     }
   },
