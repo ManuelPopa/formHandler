@@ -46,5 +46,7 @@ Testing the application:
 
  After the change of the rootUrl variable is done, the application should work without issues.
 
+ Inside gulpfile.js there is a function "notify" that will alert you when an error appears in the code (the approximate line of the error).
+
 
  
