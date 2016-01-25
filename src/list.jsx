@@ -21,10 +21,7 @@ module.exports = React.createClass({
         human.key = key;
 
         children.push(
-          <ListPeople
-            human={human}
-            key={key}
-            >
+          <ListPeople human={human} key={key}>
           </ListPeople>
         )
       }

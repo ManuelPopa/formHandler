@@ -19,18 +19,18 @@ var App = React.createClass({
     this.fb.on('value', this.handleDataLoaded);
   },
   render: function() {
-    return <div className="row panel panel-default" >
-      <div className="col-md-8 col-md-offset-2" >
-        <h2 className="text-center" >
+    return <div className="row panel panel-default">
+      <div className="col-md-8 col-md-offset-2">
+        <h2 className="text-center">
           Register People:
-        </h2 >
-        <Head peopleStore={this.firebaseRefs.people} />
-        <hr />
-        <div className={"content " + (this.state.loaded ? 'loaded' : '')} >
-          <List people={this.state.people} />
-        </div >
-      </div >
-    </div >
+        </h2>
+        <Head peopleStore={this.firebaseRefs.people}/>
+        <hr/>
+        <div className={"content " + (this.state.loaded ? 'loaded' : '')}>
+          <List people={this.state.people}/>
+        </div>
+      </div>
+    </div>
   },
   handleDataLoaded: function(){
     this.setState({loaded: true});

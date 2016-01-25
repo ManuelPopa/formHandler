@@ -17,13 +17,13 @@ module.exports = React.createClass({
   render: function() {
     return <div className="input-group">
       <span className="input-group-addon"> Check to edit 
-        <input style={{marginLeft: 5 + 'px'}} type="checkbox" checked={this.state.edit} onChange={this.handleEditableChange} />
+        <input style={{marginLeft: 5 + 'px'}} type="checkbox" checked={this.state.edit} onChange={this.handleEditableChange}/>
       </span>
-      <input type="text" disabled="true" className="form-control" value={this.state.firstname + ' ' + this.state.name} />
+      <input type="text" disabled="true" className="form-control" value={this.state.firstname + ' ' + this.state.name}/>
         {this.changesInput()}
       <span className="input-group-btn">
         {this.changesButtons()}
-        <button className="btn btn-default" onClick={this.handleDeleteClick} >
+        <button className="btn btn-default" onClick={this.handleDeleteClick}>
           Delete
         </button>
       </span>
@@ -35,10 +35,10 @@ module.exports = React.createClass({
       return null
     } else {
       return [
-        <button className="btn btn-default" onClick={this.handleSaveClick} >
+        <button className="btn btn-default" onClick={this.handleSaveClick}>
           Save
         </button>,
-        <button className="btn btn-default" onClick={this.handleUndoClick} >
+        <button className="btn btn-default" onClick={this.handleUndoClick}>
           Undo
         </button>
       ]
@@ -48,9 +48,9 @@ module.exports = React.createClass({
     if(!this.state.edit) {
       return null
     } else {
-      return <div >     
-        <input className="form-control" value={this.state.firstname} onChange={this.handleFirstNameChange} type="text" />   
-        <input className="form-control" value={this.state.name} onChange={this.handleNameChange} type="text" />          
+      return <div>     
+        <input className="form-control" value={this.state.firstname} onChange={this.handleFirstNameChange} type="text"/>   
+        <input className="form-control" value={this.state.name} onChange={this.handleNameChange} type="text"/>          
       </div>
     }
   },
@@ -66,9 +66,16 @@ module.exports = React.createClass({
       textChanged: true
     });
   },
-  handleSaveClick: function() {
-    this.fb.update({name: this.state.name, firstname: this.state.firstname});
-    this.setState({textChanged: false});
+  handleSaveClick: function(e) {
+    var regex=/^[a-zA-Z\s]{3,20}$/;
+
+    if (regex.test(this.state.name)&&regex.test(this.state.firstname)){
+      this.fb.update({name: this.state.name, firstname: this.state.firstname});
+      this.setState({textChanged: false});
+    }else {
+      e.preventDefault();
+      return alert("Please insert valid Name and First Name, must be 2 to 20 characters long")
+    }    
   },
   handleUndoClick: function() {
     this.setState({

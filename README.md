@@ -46,4 +46,5 @@ Testing the application:
 
  After the change of the rootUrl variable is done, the application should work without issues.
 
+
  
